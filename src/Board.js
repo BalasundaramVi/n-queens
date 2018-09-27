@@ -83,7 +83,7 @@
       for (var i = 0; i < this.rows()[rowIndex].length; i++) {
         if (this.rows()[rowIndex][i] === 1) {
           pieceCount++;
-          if (pieceCount == 2) {
+          if (pieceCount === 2) {
             return true;
           }
         }
@@ -158,7 +158,7 @@
 
     // test if any major diagonals on this board contain conflicts
     hasAnyMajorDiagonalConflicts: function() {
-      for (var i = (-1 * this.rows().length); i < this.rows().length; i++) {
+      for (var i = (-1*this.rows().length + 2); i < this.rows().length; i++) {
         if(this.hasMajorDiagonalConflictAt(i)) {
           return true;
         };
